@@ -25,6 +25,11 @@ export default function LoginForm() {
     setEmail(value);
   };
 
+  const handlePassword = (event) => {
+    const { value } = event.target;
+    setPassword(value);
+  }
+
   return (
     <div className='wrapper'>
       <div className='login-form'>
@@ -37,7 +42,7 @@ export default function LoginForm() {
         </div>
         <div className='row'>
           <label htmlFor={'password'}>Password</label>
-          <input id={'password'} type={'password'} />
+          <input id={'password'} type={'password'} value={password} onChange={handlePassword}/>
         </div>
 
         <div className='button'>
