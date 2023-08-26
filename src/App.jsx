@@ -14,6 +14,9 @@ import { useState } from 'react';
 // todo - Mostre uma mensagem de erro de login() caso o Login falhe. A mensagem deve ser limpa a cada nova tentativa de Login.
 // todo - Mostre um alerta caso o login seja efetuado com sucesso (javascript alert). Investigue a função login() para entender como ter sucesso na requisição.
 
+
+// todo: fazer uma validação de email com regex
+
 export default function LoginForm() {
 
   const [email, setEmail] = useState('');
@@ -28,6 +31,10 @@ export default function LoginForm() {
   const handlePassword = (event) => {
     const { value } = event.target;
     setPassword(value);
+  }
+
+  const handleSubmit = () => {
+    console.log("submite");
   }
 
   return (
@@ -46,7 +53,7 @@ export default function LoginForm() {
         </div>
 
         <div className='button'>
-          <button disabled={email === '' || email.length < 6}>Login</button>
+          <button disabled={email === '' || email.length < 6} onClick={handleSubmit}>Login</button>
         </div>
       </div>
     </div>
