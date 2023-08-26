@@ -46,7 +46,7 @@ export default function LoginForm() {
         </div>
 
         <div className='button'>
-          <button>Login</button>
+          <button disabled={email === '' || email.length < 6}>Login</button>
         </div>
       </div>
     </div>
