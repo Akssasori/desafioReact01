@@ -39,9 +39,12 @@ export default function LoginForm() {
     //   password,
     // }
 
-    let values = {email: email, password: password};
-    login(values);
-
+    let values = { email: email, password: password };
+    login(values)
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
